@@ -60,7 +60,6 @@ function handleRender(arr, node) {
 }
 handleRender(pokemons, elWrapperCard);
 
-// search functionality
 elFormSearch.addEventListener("submit", (evet) => {
   evet.preventDefault();
   elWrapperCard.innerHTML = "";
@@ -89,6 +88,11 @@ elFormSearch.addEventListener("submit", (evet) => {
           b.name.toLowerCase().charCodeAt(0) -
           a.name.toLowerCase().charCodeAt(0)
         );
+      });
+    }
+    if (elSortSelectOption.value == "minHeight") {
+      searchFunctionality.sort((a, b) => {
+        return a.height - b.height;
       });
     }
     handleRender(searchFunctionality, elWrapperCard);
