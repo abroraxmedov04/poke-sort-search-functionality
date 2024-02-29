@@ -95,6 +95,22 @@ elFormSearch.addEventListener("submit", (evet) => {
         return a.height - b.height;
       });
     }
+    if (elSortSelectOption.value == "maxHeight") {
+      searchFunctionality.sort((a, b) => {
+        return b.height - a.height;
+      });
+    }
+    if (elSortSelectOption.value == "minWeight") {
+      searchFunctionality.sort((a, b) => {
+        return a.weight - b.weight;
+      });
+    }
+
+    if (elSortSelectOption.value == "maxWeight") {
+      searchFunctionality.sort((a, b) => {
+        return b.weight - a.weight;
+      });
+    }
     handleRender(searchFunctionality, elWrapperCard);
   } else {
     alert("not found");
